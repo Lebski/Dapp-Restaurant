@@ -1,4 +1,9 @@
-console.log(web3.currentProvider)
+contractAdress = '0x9561c133dd8580860b6b7e504bc5aa500f0f06a7';
+amountOfCoctails = 4;
+
+console.log(web3.currentProvider);
+
+
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
 } else {
@@ -16,7 +21,7 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 var DrinksContract = web3.eth.contract(contractABI);
 
 console.log(contractABI);
-var Drinks = DrinksContract.at('0xde5491f774f0cb009abcea7326342e105dbb1b2e');
+var Drinks = DrinksContract.at(contractAdress);
 var coctails = '{"coctails":[' +
     '{"name":"Capri Americano","Amount":0 },' +
     '{"name":"Holy Flame Coctail","Amount":0 },' +
@@ -49,12 +54,21 @@ function reset() {
 }
 
 function buyCoctail() {
-    p0 = CoctailsO.coctails[0].Amount;
-    p1 = CoctailsO.coctails[1].Amount;
-    p2 = CoctailsO.coctails[2].Amount;
-    p3 = CoctailsO.coctails[3].Amount;
+    var drinkArray = [];
+    var amountArray = [];
+    table = document.getElementById("table").options.selectedIndex;
+    for (i = 0; i < amountOfCoctails; i++ ){
+        _amount = CoctailsO.coctails[0].Amount;
+        if (_amount != 0) {
+            drinkArray.push(i);
+            amountArray.push(_amount);
 
-    Drinks.takeOrder(p0, p1, p2, p3, function (error, result) {
+        }
+    }
+    console.log(drinkArray, amountArray)
+    var price = calcPrice();
+    console.log(typeof price);
+    Drinks.takeOrder(1, drinkArray, amountArray, {from: web3.eth.accounts[0], gas: 3000000, value: calcPrice() },function (error, result) {
         if (!error){
             document.getElementById("transaction_hash").innerHTML = "TransactionHash:" + result;
             qrcode.makeCode(result);
@@ -66,30 +80,26 @@ function buyCoctail() {
 
 }
 
+function calcPrice() {
+    var drinkArray = [];
+    var amountArray = [];
+    for (i = 0; i < amountOfCoctails; i++ ){
+        _amount = CoctailsO.coctails[i].Amount;
+        if (_amount != 0) {
+            drinkArray.push(i);
+            amountArray.push(_amount);
 
-console.log(Drinks);
-
-function burglar() {
-    Drinks.getDrinks(1, function (error, result) {
-        if (!error) {
-            drinksAmount = Web3.toText(result); //aus local nach global bringen
-            console.log(drinksAmount);
-            callDrinks(drinksAmount)
         }
-        else {
+    }
+    console.log(drinkArray, amountArray)
+    Drinks.calcPrice(drinkArray, amountArray, function (error, result) {
+        if (!error){
+            var res = result.toString(10);
+            document.getElementById("price").innerHTML = "Preis: " + res + " Ethereum";
+            console.log(res);
+            return res;
+        } else {
             console.error(error);
-        }
-    });
+        } });
+
 }
-
-var drinksOrder = burglar();
-
-function callDrinks(drinksOrder) {
-    $("#resultId").html('Fancy Drangon Drink ' + drinksOrder);
-}
-
-
-
-
-
-

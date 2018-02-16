@@ -37,7 +37,7 @@
                                 class="fa fa-check" id="check"></div></span></a>
                         <div class="title">Capri Americano</div>
                         <div class="desc">Lorem ipsum dolor sit amet.</div>
-                        <span class="price">5.67$</span>
+                        <span class="price">0.567Eth</span>
                         <div class="footer">
                             <ul>
                                 <li class="fa fa-star"></li>
@@ -69,7 +69,7 @@
                             class="fa fa-check" id="check"></div></span></a>
                     <div class="title">Holy Flame Coctail</div>
                     <div class="desc">Lorem ipsum dolor sit amet.</div>
-                    <span class="price">5.67$</span>
+                    <span class="price">0.567Eth</span>
                     <div class="footer">
                         <ul>
                             <li class="fa fa-star"></li>
@@ -99,7 +99,7 @@
                             class="fa fa-check" id="check"></div></span></a>
                     <div class="title">Zombie Smasher</div>
                     <div class="desc">Lorem ipsum dolor sit amet.</div>
-                    <span class="price">5.67$</span>
+                    <span class="price">0.567Eth</span>
                     <div class="footer">
                         <ul>
                             <li class="fa fa-star"></li>
@@ -130,7 +130,7 @@
                             class="fa fa-check" id="check"></div></span></a>
                     <div class="title">Strawberry DaiQUIRI</div>
                     <div class="desc">Lorem ipsum dolor sit amet.</div>
-                    <span class="price">5.67$</span>
+                    <span class="price">0.567Eth</span>
                     <div class="footer">
                         <ul>
                             <li class="fa fa-star"></li>
@@ -157,6 +157,16 @@
     <div class="row">
     <div class="col-lg-6">
         <div class="result" id="resultId" style="margin-top:500px;text-align:left;"></div>
+        <button onclick="calcPrice()" style="margin-left:40px;">Calculate Price</button>
+        <select class="select-amount" id="table">
+            <option value="0">-- Select Table --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <div class="none" id="price" style="text-align:left;"></div>
         <button onclick="buyCoctail()" style="margin-left:40px;">Buy</button>
         <button onclick="reset()" style="margin-left:50px;">Reset</button>
     </div>
