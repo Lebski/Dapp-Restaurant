@@ -1,6 +1,6 @@
 # itmanagement
 
-##TODO:##
+##TODO:
 
 * Integration der Ethereum-Funktionalität (Dateien in Verzeichnis kopieren!)
 * Buttons für CalculatePrice stylen
