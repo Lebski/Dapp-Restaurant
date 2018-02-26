@@ -1,7 +1,7 @@
  <?php
 $servername = "localhost";
 $username = "root";
-$password = "thezecke11";
+$password = "asdf";
 $dbname = "itmanagement";
 
 // Create connection
@@ -18,7 +18,7 @@ $mysqli = new mysqli($servername, $username, $password, $dbname);
 
 $allDrinks = (($_POST['cocktail0'] != 'none') ? "Zombie: " . "[" . $_POST['cocktail0'] . "]   " : "") . (($_POST['cocktail1'] != 'none') ? "Wodka: " . "[" . $_POST['cocktail1'] . "]   " : "") . (($_POST['cocktail2'] != 'none') ? "Tequila: " . "[" . $_POST['cocktail2'] . "]   " : "") . (($_POST['cocktail3'] != 'none') ? "JimBean: " . "[" . $_POST['cocktail3'] . "]   " : "");
 //$allDrinks = $_POST['drinks'];
-$transactionid = "0x075658f61306dd085be71acfa001c038485f313d0bcfeec51c9b079def74f796";
+$transactionid = $_POST['txid'];
 
 $stmt = $mysqli->prepare("INSERT INTO bestellungen(tischnummer,drinks, transactionid) VALUES (?,?,?)");
 $stmt->bind_param("iss", $_POST['table'],$allDrinks,$transactionid);
@@ -29,4 +29,4 @@ $stmt->execute();
 //var_export($ages);
 $stmt->close();
 $mysqli->close();
-?> 
+?>

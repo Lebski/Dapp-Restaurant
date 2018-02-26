@@ -1,7 +1,7 @@
  <?php
 $servername = "localhost";
 $username = "root";
-$password = "thezecke11";
+$password = "asdf";
 $dbname = "itmanagement";
 
 // Create connection
@@ -17,7 +17,7 @@ $result = $stmt->get_result();
 //var_export($ages);
 $stmt->close();
 $mysqli->close();
-?> 
+?>
 
 
 <!doctype html>
@@ -373,10 +373,10 @@ $mysqli->close();
 			echo "<td>" . $row['timestamp'] . "</td>";
 			echo "<td>" . $row['drinks'] . "</td>";
 			echo "<td>" . $row['tischnummer'] . "</td>";
-			echo "<td>" . "<span style='cursor: pointer;' onclick='testFunction(\"" . $row['transactionid'] ."\");' href='https://etherscan.io/tx/" . $row['transactionid'] . "'>" . $row['transactionid'] . "</span></td>";
+			echo "<td>" . "<span style='cursor: pointer;' onclick='testFunction(\"" . $row['transactionid'] ."\");' href='https://ropsten.etherscan.io/tx/" . $row['transactionid'] . "'>" . $row['transactionid'] . "</span></td>";
 			echo "</tr>";
 			}
-		   ?>	
+		   ?>
                     </tbody>
                   </table>
                         </div>
@@ -454,7 +454,7 @@ $mysqli->close();
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
 
-	// When the user clicks the button, open the modal 
+	// When the user clicks the button, open the modal
 	//btn.onclick = function() {
 	//    modal.style.display = "block";
 	//}
@@ -472,7 +472,7 @@ $mysqli->close();
 	}
 
 	function testFunction(id) {
-		$('#localiframe').attr('src', "https://etherscan.io/tx/" +id);
+		$('#localiframe').attr('src', "https://ropsten.etherscan.io/tx/" +id);
 		modal.style.display = "block";
 		return false;
 	}

@@ -215,7 +215,7 @@
 		<div class="row" style="margin-top:-5%">
 			<div class="col-lg-6">
 				<div class="result" id="resultId" style="text-align:left;"></div>
-				<button onclick="calcPrice()" style="margin-left:40px;">Calculate Price</button>
+				<button class="btn" onclick="calcPrice()" style="margin-left:40px;">Calculate Price</button>
 				<select class="select-amount" id="table">
 					<option value="none">-- Select Table --</option>
 					<option value="1">1</option>
@@ -225,8 +225,8 @@
 					<option value="5">5</option>
 				</select>
 				<div class="none" id="price" style="text-align:left;"></div>
-				<button id="buyBtn" onclick="buyCoctail()" style="margin-left:40px;" disabled="true">Buy</button>
-				<button onclick="reset()" style="margin-left:50px;">Reset</button>
+				<button class="btn btn-primary" id="buyBtn" onclick="buyCoctail()" style="background-color: #fec810 !important;background-color: #fec810 !importan;margin-left:40px;" disabled="true">Buy</button>
+				<button class="btn" onclick="reset()" style="margin-left:150px">Reset</button>
 			</div>
 			<div class="col-lg-6">
 				<div class="none" id="transaction_hash" style="text-align:left;"></div>

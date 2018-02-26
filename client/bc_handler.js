@@ -1,4 +1,4 @@
-contractAdress = '0x21552b31ff902759012e80f8db5c52f68f881c3f';
+contractAdress = '0x8cf4eef1ebc48055b871981d87ed86992e89f055';
 amountOfCoctails = 4;
 price = 0;
 
@@ -70,7 +70,8 @@ function buyCoctail() {
       console.log(drinkArray, amountArray)
       Drinks.takeOrder(1, drinkArray, amountArray, {from: web3.eth.accounts[0], gas: 3000000, value: price},function (error, result) {
           if (!error){
-              document.getElementById("transaction_hash").innerHTML = "<a href= https://ropsten.etherscan.io/tx/" + result + ">Transaction Hash: " + result + "</a>";
+              document.getElementById("transaction_hash").innerHTML = "<a target ='_blank' href=https://ropsten.etherscan.io/tx/" + result + ">Transaction Hash: " + result + "</a>";
+              $.post('../client/writedb.php', {cocktail0: cocktail[0], cocktail1: cocktail[1], cocktail2: cocktail[2],cocktail3: cocktail[3],table: table, txid: result});
               //qrcode.makeCode(result);
               console.log(result);
               reset()
@@ -79,7 +80,7 @@ function buyCoctail() {
           } });
 
 
-      $.post('../client/writedb.php', {cocktail0: cocktail[0], cocktail1: cocktail[1], cocktail2: cocktail[2],cocktail3: cocktail[3],table: table});
+
       //window.location.href = "index.php";
     }else{
       alert("Select at least one drink!");
