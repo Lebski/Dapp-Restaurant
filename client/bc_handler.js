@@ -31,6 +31,10 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 });
 */
 
+function removeNometamask(){
+   document.getElementById("nometamask").style.visibility = "hidden";
+}
+
 function updateBill(drinkId) {
     var selectAmount = document.getElementById("select" + drinkId).options.selectedIndex;
     console.log(selectAmount);
@@ -70,7 +74,7 @@ function buyCoctail() {
       console.log(drinkArray, amountArray)
       Drinks.takeOrder(1, drinkArray, amountArray, {from: web3.eth.accounts[0], gas: 3000000, value: price},function (error, result) {
           if (!error){
-              document.getElementById("transaction_hash").innerHTML = "<a target ='_blank' href=https://ropsten.etherscan.io/tx/" + result + ">Transaction Hash: " + result + "</a>";
+              document.getElementById("transaction_hash").innerHTML = "<a style='color:#000; hover,visited{ color:#000; }' target ='_blank' href=https://ropsten.etherscan.io/tx/" + result + ">Transaction Hash: " + result + "</a>";
               $.post('../client/writedb.php', {cocktail0: cocktail[0], cocktail1: cocktail[1], cocktail2: cocktail[2],cocktail3: cocktail[3],table: table, txid: result});
               //qrcode.makeCode(result);
               console.log(result);
@@ -83,10 +87,13 @@ function buyCoctail() {
 
       //window.location.href = "index.php";
     }else{
-      alert("Select at least one drink!");
+    document.getElementById("nometamask").style.visibility = "visible";
+    document.getElementById("text-nometamask").innerHTML = "<strong>Sorry!</strong> <br> Bitte wählen Sie mindestens einen Cocktail aus. </div>"
     }
   }else{
-    alert("Table must not be null!");
+    document.getElementById("nometamask").style.visibility = "visible";
+    document.getElementById("text-nometamask").innerHTML = "<strong>Sorry!</strong> <br> Bitte wählen Sie mindestens einen Tisch aus. </div>"
+
   }
 
 
@@ -98,11 +105,15 @@ function disableBuy(isActive) {
 }
 
 function calcPrice() {
+  removeNometamask();
   var cocktail = []
   cocktail[0] = document.getElementById("select0").value;
   cocktail[1] = document.getElementById("select1").value;
   cocktail[2] = document.getElementById("select2").value;
   cocktail[3] = document.getElementById("select3").value;
+  if(cocktail[0] != 0 || cocktail[1] != 0 || cocktail[2] != 0 || cocktail[3] != 0 ){
+
+
 
     var drinkArray = [];
     var amountArray = [];
@@ -118,12 +129,15 @@ function calcPrice() {
     Drinks.calcPrice(drinkArray, amountArray, function (error, result) {
         if (!error){
             var res = result.toString(10);
-            document.getElementById("price").innerHTML = "Preis: " + res + " Ethereum";
+            document.getElementById("price").innerHTML = "Der Preis beträgt: " + res/10**18 + " Ethereum";
             console.log(res);
             price = res;
             disableBuy(0);
         } else {
             console.error(error);
         } });
-
+} else {
+document.getElementById("nometamask").style.visibility = "visible";
+document.getElementById("text-nometamask").innerHTML = "<strong>Sorry!</strong> <br> Bitte wählen Sie mindestens einen Cocktail aus. </div>"
+}
 }

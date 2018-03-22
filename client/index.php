@@ -85,17 +85,17 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Cocktail-Auswahl</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">Bitte wählen Sie ihre gewünschte Bestellung.</h3>
           </div>
         </div>
         <div class="row text-center">
 
           <div class="col-md-3" style="margin-bottom:10%">
 		    <div class="test">
-				<img src="http://zenideen.com/wp-content/uploads/2016/11/coctailrezepte-zombie-800x400.jpg" alt="rhcp"/>
-				<h4 class="service-heading">Zombie</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-				<span class="price">0.567Eth</span>
+				<img src="img/cocktails/tropic.jpg" alt="rhcp"/>
+				<h4 class="service-heading">TropicLight</h4>
+				<p class="text-muted">Tropical mix with mango and passion fruit.</p>
+				<span class="price">0.012Eth</span>
 				<div class="footer">
 					<ul style="padding-left: 0px;">
 						<li class="fa fa-star"></li>
@@ -113,7 +113,7 @@
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<div class="newbuy">
+					<div class="newbuy" hidden="true">
 						<a class="buy"><span onclick="updateBill(1)"><div class="fa fa-cart-plus" id="cart"></div><div
                             class="fa fa-check" id="check"></div></span></a>
 					</div>
@@ -123,10 +123,10 @@
           </div>
           <div class="col-md-3" style="margin-bottom:10%">
 			<div class="test">
-				<img src="https://cdn.liquor.com/wp-content/uploads/2017/05/18075612/americano-720x720-article.jpg" alt="rhcp"/>
-				<h4 class="service-heading">Wodka</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-				<span class="price">0.567Eth</span>
+				<img src="img/cocktails/zombie.jpg" alt="rhcp"/>
+				<h4 class="service-heading">Zombie</h4>
+				<p class="text-muted">It's strong. <br> Nothing more to say.</p>
+				<span class="price">0.15Eth</span>
 				<div class="footer">
 					<ul style="padding-left: 0px;">
 						<li class="fa fa-star"></li>
@@ -144,7 +144,7 @@
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<div class="newbuy">
+					<div class="newbuy" hidden="true">
 						<a class="buy"><span onclick="updateBill(1)"><div class="fa fa-cart-plus" id="cart"></div><div
                             class="fa fa-check" id="check"></div></span></a>
 					</div>
@@ -153,17 +153,17 @@
           </div>
           <div class="col-md-3" style="margin-bottom:10%">
 		  <div class="test">
-            <img src="https://thumbs.dreamstime.com/z/close-up-view-cosmo-drinks-party-cosmopolitan-black-background-club-45364274.jpg" alt="rhcp"/>
-            <h4 class="service-heading">Tequila</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			<span class="price">0.567Eth</span>
+            <img src="img/cocktails/sour.jpg" alt="rhcp"/>
+            <h4 class="service-heading">Scotch&Soda</h4>
+            <p class="text-muted">Our finest whiskey with soda <br> and some ice</p>
+			<span class="price">0.014Eth</span>
 			<div class="footer">
 				<ul style="padding-left: 0px;">
 					<li class="fa fa-star"></li>
 					<li class="fa fa-star"></li>
 					<li class="fa fa-star"></li>
 					<li class="fa fa-star"></li>
-					<li class="fa fa-star-o"></li>
+					<li class="fa fa-star"></li>
 				</ul>
 
 				<select class="select-amount" onchange="disableBuy(1)" id="select2">
@@ -174,25 +174,24 @@
 					<option value="4">4</option>
 					<option value="5">5</option>
 				</select>
-				<div class="newbuy">
-						<a class="buy"><span onclick="updateBill(1)"><div class="fa fa-cart-plus" id="cart"></div><div
-                            class="fa fa-check" id="check"></div></span></a>
-					</div>
+
+          <div class"onlypadding" style="padding-bottom:40px">
+          </div>
 			</div>
 			</div>
           </div>
           <div class="col-md-3" style="margin-bottom:10%">
 		  <div class="test">
-            <img src="http://zenideen.com/wp-content/uploads/2016/11/cocktailrezepte-fur-den-sommer-800x400.jpg" alt="rhcp"/>
-            <h4 class="service-heading">JimBean</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			<span class="price">0.567Eth</span>
+            <img src="img/cocktails/jimbeam.jpg" alt="rhcp"/>
+            <h4 class="service-heading">FrozenBerry</h4>
+            <p class="text-muted">Crushed ice with vodka and strawberrys</p>
+			<span class="price">0.010Eth</span>
 			<div class="footer">
 				<ul style="padding-left: 0px;">
 					<li class="fa fa-star"></li>
 					<li class="fa fa-star"></li>
 					<li class="fa fa-star"></li>
-					<li class="fa fa-star"></li>
+					<li class="fa fa-star-o"></li>
 					<li class="fa fa-star-o"></li>
 				</ul>
 
@@ -204,7 +203,7 @@
 					<option value="4">4</option>
 					<option value="5">5</option>
 				</select>
-				<div class="newbuy">
+				<div class="newbuy" hidden="true">
 						<a class="buy"><span onclick="updateBill(1)"><div class="fa fa-cart-plus" id="cart"></div><div
                             class="fa fa-check" id="check"></div></span></a>
 					</div>
@@ -212,11 +211,11 @@
           </div>
 		  </div>
         </div>
-		<div class="row" style="margin-top:-5%">
+		<div class="row" style="margin-top:-5%; font-family:'Roboto', sans-serif;">
 			<div class="col-lg-6">
 				<div class="result" id="resultId" style="text-align:left;"></div>
 				<button class="btn" onclick="calcPrice()" style="margin-left:40px;">Calculate Price</button>
-				<select class="select-amount" id="table">
+				<select class="select-amount" id="table" onchange="removeNometamask()" style="margin-left:55px;">
 					<option value="none">-- Select Table --</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -224,7 +223,7 @@
 					<option value="4">4</option>
 					<option value="5">5</option>
 				</select>
-				<div class="none" id="price" style="text-align:left;"></div>
+				<div class="none" id="price" style="margin-left:40px; margin-top:10px; margin-bottom:10px;font-family: 'Roboto', sans-serif;font-weight: 600; font-size: 20px "> Bitte zuerst den Preis berechnen</div>
 				<button class="btn btn-primary" id="buyBtn" onclick="buyCoctail()" style="background-color: #fec810 !important;background-color: #fec810 !importan;margin-left:40px;" disabled="true">Buy</button>
 				<button class="btn" onclick="reset()" style="margin-left:150px">Reset</button>
 			</div>
@@ -234,8 +233,15 @@
 				<div id="qrcode" style="width:200px; height:100px; margin-top:15px;"></div>
 			</div>
 		</div>
+
+    <div class="alert alert-danger alert-dismissible" id="nometamask" style="margin-top:20px; visibility:hidden" >
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <center><div id="text-nometamask"> <strong>Sorry!</strong> <br> Bitte wählen Sie zuerst ihre Daten aus. </div></center>
+    </div>
 	  </div>
     </section>
+
+
 
     <!-- Portfolio Grid -->
     <!--<section class="bg-light" id="portfolio">
@@ -340,7 +346,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Ethereum (Anleitung?)</h2>
+            <h2 class="section-heading text-uppercase">Our Ethereum Story</h2>
             <h3 class="section-subheading text-muted">Die Next-Generation Kryptowährung!</h3>
           </div>
         </div>
