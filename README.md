@@ -1,7 +1,23 @@
 # itmanagement
 
-## TODO
+## Clinet
 
-* Integration der Ethereum-Funktionalität (Dateien in Verzeichnis kopieren!)
-* Buttons für CalculatePrice stylen
-* Modal für explizite Bestätigung Transaktion (reicht eventuell auch das Metamask?)
+View for users/customer
+
+## Server
+
+Interface for service
+
+## Usage
+
+> Init PHP-Server @parent of client & server
+
+> Install MetaMask in your browser
+
+```bash
+$ mv projectfolder /var/www/html/
+$ sudo service mysql start
+$ sudo service apache2 start
+```
+
+Have fun! 
