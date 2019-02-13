@@ -1,5 +1,7 @@
 # Dapp-Restaurant
 
+:warning: This Repo ist not longer maintained
+
 ## Clinet
 
 View for users/customer
